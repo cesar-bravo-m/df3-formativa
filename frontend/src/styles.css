@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  body {
+    @apply antialiased bg-amber-50;
+  }
+
+  input[type="number"] {
+    @apply appearance-none;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    @apply appearance-none m-0;
+  }
+}
+
+@layer components {
+  .form-input {
+    @apply mt-1 block w-full rounded-lg border-amber-200 shadow-sm focus:border-amber-500 focus:ring-amber-500 bg-white/50;
+  }
+}
