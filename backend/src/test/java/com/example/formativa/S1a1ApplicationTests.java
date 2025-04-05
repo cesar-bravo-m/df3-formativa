@@ -1,10 +1,10 @@
-package com.example.s1a1;
+package com.example.formativa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class S1a1ApplicationTests {
+class FormativaApplicationTests {
 
 	@Test
 	void contextLoads() {
