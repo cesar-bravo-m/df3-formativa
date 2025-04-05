@@ -106,7 +106,7 @@ export class BookListComponent implements OnInit {
   }
 
   deleteBook(id: number): void {
-    if (confirm('Are you sure you want to delete this book?')) {
+    if (confirm('¿Está seguro que desea eliminar este libro?')) {
       this.bookService.deleteBook(id).subscribe(() => {
         this.loadBooks();
         this.resetForm();
@@ -127,19 +127,19 @@ export class BookListComponent implements OnInit {
 
   private validateBook(book: Book): boolean {
     if (!book.title || book.title.length > 255) {
-      alert('Title is required and must be less than 255 characters');
+      alert('El título es requerido y debe ser menor a 255 caracteres');
       return false;
     }
     if (!book.author || book.author.length > 255) {
-      alert('Author is required and must be less than 255 characters');
+      alert('El autor es requerido y debe ser menor a 255 caracteres');
       return false;
     }
     if (!book.year || book.year < 0 || book.year > 9999) {
-      alert('Year must be between 0 and 9999');
+      alert('El año debe estar entre 0 y 9999');
       return false;
     }
     if (book.genre && book.genre.length > 100) {
-      alert('Genre must be less than 100 characters');
+      alert('El género debe ser menor a 100 caracteres');
       return false;
     }
     return true;
