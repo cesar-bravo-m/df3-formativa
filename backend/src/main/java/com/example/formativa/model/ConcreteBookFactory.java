@@ -1,4 +1,4 @@
-package com.example.s1a1.model;
+package com.example.formativa.model;
 
 import org.springframework.stereotype.Component;
 

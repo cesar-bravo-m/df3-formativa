@@ -1,9 +1,9 @@
-package com.example.s1a1.repository;
+package com.example.formativa.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.s1a1.model.Book;
+import com.example.formativa.model.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {

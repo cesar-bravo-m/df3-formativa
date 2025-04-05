@@ -1,4 +1,4 @@
-package com.example.s1a1.model;
+package com.example.formativa.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

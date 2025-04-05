@@ -1,4 +1,4 @@
-package com.example.s1a1.controller;
+package com.example.formativa.controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.s1a1.model.Book;
-import com.example.s1a1.service.BookService;
+import com.example.formativa.model.Book;
+import com.example.formativa.service.BookService;
 
 @RestController
 @RequestMapping("/api/books")

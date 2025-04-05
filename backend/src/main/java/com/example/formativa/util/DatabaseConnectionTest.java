@@ -1,4 +1,4 @@
-package com.example.s1a1.util;
+package com.example.formativa.util;
 
 import java.sql.Connection;
 import java.sql.SQLException;

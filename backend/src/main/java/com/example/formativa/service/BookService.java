@@ -1,4 +1,4 @@
-package com.example.s1a1.service;
+package com.example.formativa.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.s1a1.model.Book;
-import com.example.s1a1.model.BookFactory;
-import com.example.s1a1.repository.BookRepository;
+import com.example.formativa.model.Book;
+import com.example.formativa.model.BookFactory;
+import com.example.formativa.repository.BookRepository;
 
 @Service
 public class BookService {
