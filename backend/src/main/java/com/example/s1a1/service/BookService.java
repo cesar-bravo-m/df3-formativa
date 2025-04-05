@@ -7,16 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.s1a1.model.Book;
+import com.example.s1a1.model.BookFactory;
 import com.example.s1a1.repository.BookRepository;
 
 @Service
 public class BookService {
 
     private final BookRepository bookRepository;
+    private final BookFactory bookFactory;
 
     @Autowired
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, BookFactory bookFactory) {
         this.bookRepository = bookRepository;
+        this.bookFactory = bookFactory;
     }
 
     public List<Book> findAllBooks() {
@@ -33,5 +36,10 @@ public class BookService {
 
     public void deleteBook(Long id) {
         bookRepository.deleteById(id);
+    }
+
+    public Book createBook(String title, String author, Integer year, String genre) {
+        Book book = bookFactory.createBook(title, author, year, genre);
+        return bookRepository.save(book);
     }
 } 

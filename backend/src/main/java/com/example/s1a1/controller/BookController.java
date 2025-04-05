@@ -42,7 +42,13 @@ public class BookController {
 
     @PostMapping
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(bookService.saveBook(book));
+        Book createdBook = bookService.createBook(
+            book.getTitle(),
+            book.getAuthor(),
+            book.getYear(),
+            book.getGenre()
+        );
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdBook);
     }
 
     @PutMapping("/{id}")
