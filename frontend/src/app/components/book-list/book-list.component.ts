@@ -77,9 +77,14 @@ export class BookListComponent implements OnInit {
   }
 
   loadBooks(): void {
-    this.bookService.getBooks().subscribe(books => {
-      this.books = books;
-    });
+    try {
+      this.bookService.getBooks().subscribe(books => {
+        this.books = books;
+      });
+    } catch (error) {
+      console.error('Error al cargar los libros');
+      this.books = [];
+    }
   }
 
   selectBook(book: Book): void {
@@ -88,29 +93,42 @@ export class BookListComponent implements OnInit {
   }
 
   createBook(): void {
-    if (this.validateBook(this.newBook)) {
-      this.bookService.createBook(this.newBook).subscribe(() => {
-        this.loadBooks();
-        this.resetForm();
-      });
+    try {
+      if (this.validateBook(this.newBook)) {
+        this.bookService.createBook(this.newBook).subscribe(() => {
+          this.loadBooks();
+          this.resetForm();
+        });
+      }
+    } catch (error) {
+      console.error('Error al crear libro');
     }
+
   }
 
   updateBook(): void {
-    if (this.selectedBook && this.validateBook(this.selectedBook)) {
-      this.bookService.updateBook(this.selectedBook.id!, this.selectedBook).subscribe(() => {
-        this.loadBooks();
-        this.resetForm();
-      });
+    try {
+      if (this.selectedBook && this.validateBook(this.selectedBook)) {
+        this.bookService.updateBook(this.selectedBook.id!, this.selectedBook).subscribe(() => {
+          this.loadBooks();
+          this.resetForm();
+        });
+      }
+    } catch (error) {
+      console.error('Error al actualizar libro');
     }
   }
 
   deleteBook(id: number): void {
-    if (confirm('¿Está seguro que desea eliminar este libro?')) {
-      this.bookService.deleteBook(id).subscribe(() => {
-        this.loadBooks();
-        this.resetForm();
-      });
+    try {
+      if (confirm('¿Está seguro que desea eliminar este libro?')) {
+        this.bookService.deleteBook(id).subscribe(() => {
+          this.loadBooks();
+          this.resetForm();
+        });
+      }
+    } catch (error) {
+      console.error('Error al eliminar libro');
     }
   }
 
